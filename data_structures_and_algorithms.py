@@ -147,7 +147,7 @@ class Queue(object):
         return True
 
     def peek(self):
-        """ return the value of the front of the queue """
+        """ returns the value of the front of the queue """
         if self.is_empty():
             return False
         return self.q[-1]
@@ -179,7 +179,7 @@ class Stack(object):
         return False
             
     def push(self, val):
-        """ add a new element to the stack """
+        """ adds a new element to the stack """
         if self.optional_max_length:
             if len(self.stack) == self.optional_max_length:
                 return False
@@ -187,20 +187,20 @@ class Stack(object):
         return True
 
     def pop(self):
-        """ remove element from the stack """
+        """ removes element from the stack """
         if self.is_empty():
             return False
         self.stack.pop()
         return True
 
     def peek(self):
-        """ return the value of the top of the stack """
+        """ returns the value of the top of the stack """
         if self.is_empty():
             return False
         return self.stack[-1]
     
     def display(self):
-        """ prints out all the values """
+        """ returns all the values from the stack """
         return self.stack[::-1]
 
 ### driver code
@@ -275,7 +275,7 @@ class Stack_LL(object):
         return False
             
     def push(self, val):
-        """ add a new element to the stack """
+        """ adds a new element to the stack """
         if self.optional_max_length:
             if self.stack.length == self.optional_max_length:
                 return False
@@ -283,14 +283,14 @@ class Stack_LL(object):
         return True
 
     def pop(self):
-        """ remove element from the stack """
+        """ removes element from the stack """
         if self.is_empty():
             return False
         self.stack.delete() # deletes last node in linked list
         return True
 
     def peek(self):
-        """ return the value of the top of the stack """
+        """ returns the value of the top of the stack """
         if self.is_empty():
             return False
         curr_node = self.stack.header
@@ -299,7 +299,7 @@ class Stack_LL(object):
         return curr_node.value
     
     def display(self):
-        """ prints out all the values """
+        """ returns all the values from the stack """
         return self.stack.display()
 
 ### driver code
@@ -348,13 +348,13 @@ class Queue_stacks(object):
         return True
 
     def peek(self):
-        """ prints next value to be dequeued """
+        """ returns next value to be dequeued """
         if not self.stack_two.is_empty():
             return self.stack_two.peek() # top of second stack
         return self.stack_one.stack[-1] # bottom of first stack
 
     def display(self):
-        """ prints out all the values """
+        """ returns all the values from the queue """
         return self.stack_one.display()
 
 ### driver code
@@ -375,13 +375,13 @@ class Stack_queues(object):
         self.optional_max_length = optional_max_length
 
     def is_empty(self):
-        """ check if stack is empty """
+        """ checks if stack is empty """
         if (len(self.queue_one.q) == 0 and len(self.queue_two.q) == 0):
             return True
         return False
             
     def push(self, val):
-        """ add a new element to the stack """
+        """ adds a new element to the stack """
         if self.optional_max_length:
             if len(self.queue_one.q) + len(self.queue_two.q) == self.optional_max_length:
                 return False
@@ -389,7 +389,7 @@ class Stack_queues(object):
         return True
 
     def pop(self):
-        """ remove element from the stack """
+        """ removes element from the stack """
         if self.queue_one.is_empty() and self.queue_two.is_empty():
             return False
         while self.queue_one.q.length > 1: # dequeue all except last item from first queue,
@@ -401,7 +401,7 @@ class Stack_queues(object):
         return True
 
     def peek(self):
-        """ return the value of the top of the stack """
+        """ returns the value of the top of the stack """
         if self.queue_one.is_empty() and self.queue_two.is_empty():
             return False
         elif self.queue_one.is_empty():
@@ -416,7 +416,7 @@ class Stack_queues(object):
             return self.copy_queue_one.queue.peek() # last item from first queue
     
     def display(self):
-        """ return all the values in the stack """
+        """ returns all the values from the stack """
         if self.queue_one:
             self.queue_one.display()            
         else:
