@@ -133,8 +133,9 @@ class Queue(object):
         """ removes element from the queue """
         if self.is_empty():        
             return False    
+        dequeued_item = self.q[0]
         self.q = self.q[1:]
-        return True
+        return dequeued_item 
 
     def peek(self):
         """ returns the value of the front of the queue """
