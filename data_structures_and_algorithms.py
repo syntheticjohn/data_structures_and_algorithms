@@ -37,12 +37,9 @@ class LinkedList(object):
             new_node.next = old_next
         elif pseudo_index == self.length:
             # add all existing nodes as is, then add new node as the last node
-            if curr_node is None:
-                curr_node = new_node
-            else:
-                while curr_node:
-                    curr_node = curr_node.next
-                curr_node.next = new_node
+            while curr_node:
+                curr_node = curr_node.next
+            curr_node.next = new_node
         else:
             # add new node at the specified position, where its next node is the original node at the position
             counter = 0
