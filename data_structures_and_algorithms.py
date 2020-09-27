@@ -40,10 +40,9 @@ class LinkedList(object):
             if curr_node is None:
                 curr_node = new_node
             else:
-                last_node = curr_node
-                while last_node:
-                    last_node = last_node.next
-                last_node.next = new_node
+                while curr_node:
+                    curr_node = curr_node.next
+                curr_node.next = new_node
         else:
             # add new node at the specified position, where its next node is the original node at the position
             counter = 0
