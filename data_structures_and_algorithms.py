@@ -52,29 +52,26 @@ class LinkedList(object):
     def delete(self, pseudo_index=None):
         """ if value is passed for index, remove value at index, else remove last value """
         curr_node = self.header
-        if curr_node is None:
-            print("No nodes to delete")
-        else:
-            if pseudo_index is None:
-                # remove the last node
-                counter = 0
-                last_node = self.header
-                while counter != self.length:
-                    last_node = last_node.next
-                    counter += 1
-                last_node.next = None  
-            else:     
-                if pseudo_index == 0:
-                # remove the first node    
-                    curr_node = curr_node.next
-                    for _ in range(pseudo_index-1):
-                        curr_node = curr_node.next 
-                # remove the node at the specified index
-                else:
-                    for _ in range(pseudo_index):
-                        prev_node, curr_node = curr_node, curr_node.next
-                    prev_node.next = curr_node.next                
-         
+        if pseudo_index is None:
+            # remove the last node
+            counter = 0
+            last_node = self.header
+            while counter != self.length:
+                last_node = last_node.next
+                counter += 1
+            last_node.next = None  
+        else:     
+            if pseudo_index == 0:
+            # remove the first node    
+                curr_node = curr_node.next
+                for _ in range(pseudo_index-1):
+                    curr_node = curr_node.next 
+            # remove the node at the specified index
+            else:
+                for _ in range(pseudo_index):
+                    prev_node, curr_node = curr_node, curr_node.next
+                prev_node.next = curr_node.next                
+        
     def search(self, value, nth_instance):
         """
         Searches the linked list for the nth_instance of the value
