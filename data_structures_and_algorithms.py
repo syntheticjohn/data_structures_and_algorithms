@@ -148,14 +148,14 @@ class Queue(object):
         return self.q
 
 ### driver code
-# my_queue = Queue(2)  
-# my_queue.enqueue(value=7)
-# my_queue.enqueue(value=11)
-# my_queue.enqueue(value=24)
-# my_queue.dequeue()
-# my_queue.enqueue(value=8)
+my_queue = Queue(2)  
+my_queue.enqueue(value=7)
+my_queue.enqueue(value=11)
+my_queue.enqueue(value=24)
+my_queue.dequeue()
+# my_queue.enqueue(value=8) # 11, 8
 # print(my_queue.peek())
-# print(my_queue.display())
+print(my_queue.display())
 
 class Stack(object):
     """ stack data structure using lists """
@@ -165,9 +165,7 @@ class Stack(object):
 
     def is_empty(self):
         """ checks if stack is empty """
-        if self.stack is None:
-            return True
-        return False
+        return self.stack
             
     def push(self, val):
         """ adds a new element to the stack """
