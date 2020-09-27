@@ -211,9 +211,7 @@ class Queue_LL(object):
     
     def is_empty(self) -> bool:
         """ checks if queue is empty """
-        if self.q.length == 0:
-            return True
-        return False
+        return self.q.length == 0
         
     def enqueue(self, value) -> bool:  
         """ adds a new element to the queue """
