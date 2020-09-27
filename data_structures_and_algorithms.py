@@ -61,10 +61,9 @@ class LinkedList(object):
             curr_node.next = None  
         else:     
             if pseudo_index == 0:
-            # remove the first node    
-                curr_node = curr_node.next
-                for _ in range(pseudo_index-1):
-                    curr_node = curr_node.next 
+                if curr_node.next: 
+                    # point the first node after header to the next next node
+                    curr_node.next = curr_node.next.next
             # remove the node at the specified index
             else:
                 for _ in range(pseudo_index):
@@ -101,12 +100,13 @@ class LinkedList(object):
             curr_node = curr_node.next
 
 ### driver code         
-# my_ll = LinkedList()  
-# my_ll.insert_end(value=5)
-# my_ll.insert_end(value=8)
-# my_ll.insert_end(value=3)
-# my_ll.insert(value=10, pseudo_index=0)
-# my_ll.display()
+my_ll = LinkedList()  
+my_ll.insert_end(value=5)
+my_ll.insert_end(value=8)
+my_ll.insert_end(value=3)
+my_ll.insert(value=10, pseudo_index=0)
+my_ll.delete(pseudo_index=0)
+my_ll.display()
 
 class Queue(object):
     """ queue data structure using lists """
