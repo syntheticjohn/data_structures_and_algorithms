@@ -60,7 +60,9 @@ class LinkedList(object):
                 counter += 1
             curr_node.next = None  
         else:     
-            if pseudo_index == 0:
+            if pseudo_index > self.length:
+                return None            
+            elif pseudo_index == 0:
                 if curr_node.next: 
                     # point the first node after header to the next next node
                     curr_node.next = curr_node.next.next
