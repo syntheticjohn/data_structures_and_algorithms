@@ -56,7 +56,7 @@ class LinkedList(object):
             # remove the last node
             counter = 0
             last_node = self.header
-            while counter != self.length:
+            while counter != self.length-1:
                 last_node = last_node.next
                 counter += 1
             last_node.next = None  
