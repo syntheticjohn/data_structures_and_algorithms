@@ -31,8 +31,8 @@ class LinkedList(object):
                 curr_node = curr_node.next
             curr_node.next = Node(value)
         elif pseudo_index == 0:
-            # add pseudoindex as new header, move all remaining nodes down 
-            old_next = curr_node.next
+            # add new node after header and before first node after header  
+            old_next = curr_node.next # header, 10, 5, 8, 3
             curr_node.next = new_node
             new_node.next = old_next
         elif pseudo_index == self.length:
@@ -68,7 +68,7 @@ class LinkedList(object):
                     curr_node.next = curr_node.next.next
             # remove the node at the specified index
             else:
-                for _ in range(pseudo_index):
+                for _ in range(pseudo_index): 
                     prev_node, curr_node = curr_node, curr_node.next
                 prev_node.next = curr_node.next                
         
@@ -102,13 +102,13 @@ class LinkedList(object):
             curr_node = curr_node.next
 
 ### driver code         
-my_ll = LinkedList()  
-my_ll.insert_end(value=5)
-my_ll.insert_end(value=8)
-my_ll.insert_end(value=3)
-my_ll.insert(value=10, pseudo_index=0)
-my_ll.delete(pseudo_index=0)
-my_ll.display()
+# my_ll = LinkedList()  
+# my_ll.insert_end(value=5)
+# my_ll.insert_end(value=8)
+# my_ll.insert_end(value=3)
+# my_ll.insert(value=10, pseudo_index=0)
+# my_ll.delete(pseudo_index=0)
+# my_ll.display()
 
 class Queue(object):
     """ queue data structure using lists """
@@ -118,9 +118,7 @@ class Queue(object):
     
     def is_empty(self) -> bool:
         """ checks if queue is empty """
-        if self.q is None:
-            return True
-        return False
+        return self.q 
         
     def enqueue(self, value) -> bool:  
         """ adds a new element to the queue """
