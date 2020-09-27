@@ -22,11 +22,9 @@ class LinkedList(object):
         self.length += 1
         curr_node = self.header
         new_node = Node(value)
-        length_list = 0
         # if pseudoindex is out of range, return none 
-        if not (-1 <= pseudo_index <= length_list): 
+        if not (-1 <= pseudo_index <= self.length): 
             return None
-
         if pseudo_index == -1:
             # add pseudoindex as last node
             while curr_node.next is not None:
@@ -37,7 +35,7 @@ class LinkedList(object):
             old_next = curr_node.next
             curr_node.next = new_node
             new_node.next = old_next
-        elif pseudo_index == length_list:
+        elif pseudo_index == self.length:
             # add all existing nodes as is, then add new node as the last node
             if curr_node is None:
                 curr_node = new_node
