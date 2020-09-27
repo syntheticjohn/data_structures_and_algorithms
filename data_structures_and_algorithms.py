@@ -141,7 +141,7 @@ class Queue(object):
         """ returns the value of the front of the queue """
         if self.is_empty():
             return False
-        return self.q[-1]
+        return self.q[0]
 
     def display(self):
         """ prints out all the values """
