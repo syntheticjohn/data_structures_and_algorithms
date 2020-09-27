@@ -55,11 +55,10 @@ class LinkedList(object):
         if pseudo_index is None:
             # remove the last node
             counter = 0
-            last_node = self.header
             while counter != self.length-1:
-                last_node = last_node.next
+                curr_node = curr_node.next
                 counter += 1
-            last_node.next = None  
+            curr_node.next = None  
         else:     
             if pseudo_index == 0:
             # remove the first node    
