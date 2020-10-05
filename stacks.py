@@ -1,5 +1,4 @@
 from linkedlists import LinkedList
-from queues import Queue
 
 class Stack(object):
     """ stack data structure using lists """
@@ -79,6 +78,7 @@ class Stack_LL(object):
 class Stack_queues(object):
     """ stack data structure using two queues """
     def __init__(self, optional_max_length=None):
+        from queues import Queue
         self.queue_one = Queue()
         self.queue_two = Queue()
         self.optional_max_length = optional_max_length
