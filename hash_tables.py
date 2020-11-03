@@ -8,7 +8,7 @@ class HashTable(object):
         """ Look up value from array by its key """ 
         hash_key = hash(key) % self.length
         bucket = self.array[hash_key]
-        if not self.array[hash_key]:
+        if not bucket:
             raise KeyError() 
         else:
             for idx, key_val_pair in enumerate(bucket):
@@ -47,7 +47,7 @@ class HashTable(object):
         if self.array[hash_key] is None:
             return "No value to update at hash_key"
         else:
-            for key_val_pair in self.array[index]:
+            for key_val_pair in self.array[hash_key]:
                 if key_val_pair[0] == key:
                     key_val_pair[1] = value
                     break
@@ -59,5 +59,6 @@ if __name__ == "__main__":
     hash_table.insert(25, 'Germany')
     hash_table.insert(32, 'France')
     hash_table.delete(20)
-    hash_table.update(5, 'Japan')
+    hash_table.update(25, 'Japan')
+    print(hash_table.lookup(10))
     print(hash_table.array)
