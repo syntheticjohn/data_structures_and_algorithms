@@ -20,16 +20,12 @@ class HashTable(object):
         """ Insert a value to array by its key """
         hash_key = hash(key) % self.length
         bucket = self.array[hash_key]
-        key_exists = False
         for idx, key_val_pair in enumerate(bucket):
             k, v = key_val_pair
             if k == key:
-                key_exists = True
-                break
-        if key_exists:
-            bucket[idx] = [key, value]
-        else:
-            bucket.append([key, value])
+                bucket[idx] = [key, value]
+                return
+        bucket.append([key, value]) 
 
     def delete(self, key):
         """ Delete a value from array by its key """
