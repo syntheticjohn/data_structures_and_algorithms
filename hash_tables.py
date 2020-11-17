@@ -46,11 +46,10 @@ class HashTable(object):
         hash_key = hash(key) % self.length
         if self.array[hash_key] is None:
             return "No value to update at hash_key"
-        else:
-            for key_val_pair in self.array[hash_key]:
-                if key_val_pair[0] == key:
-                    key_val_pair[1] = value
-                    break
+        for key_val_pair in self.array[hash_key]:
+            if key_val_pair[0] == key:
+                key_val_pair[1] = value
+                break
 
 
 if __name__ == "__main__":
