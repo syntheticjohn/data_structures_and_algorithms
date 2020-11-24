@@ -20,7 +20,7 @@ class HashTable(object):
         """ Insert a value to array by its key """
         hash_key = hash(key) % self.length
         bucket = self.array[hash_key]
-        for idx, key_val_pair in bucket:
+        for idx, key_val_pair in enumerate(bucket):
             k, v = key_val_pair
             if k == key:
                 bucket[idx] = [key, value]
@@ -47,7 +47,6 @@ class HashTable(object):
             if key_val_pair[0] == key:
                 key_val_pair[1] = value
                 break
-
 
 if __name__ == "__main__":
     hash_table = HashTable(length=5)
