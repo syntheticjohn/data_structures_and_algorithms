@@ -49,6 +49,7 @@ class HashTable(object):
                 break
 
 if __name__ == "__main__":
+    ### driver code
     hash_table = HashTable(length=5)
     hash_table.insert(10, 'USA')
     hash_table.insert(20, 'Canada')
