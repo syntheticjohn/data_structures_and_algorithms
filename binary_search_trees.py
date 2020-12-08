@@ -10,37 +10,8 @@ class Node(object):
 class BST(object):
     """ Binary search tree """
     def __init__(self):
-        None
-
-    def dfs(self, node):
-        """ Depth-first search traversal """
-        if not node:
-            return []
-        result = []
-        if node.left:
-            result = result + self.dfs(node.left)
-        if node.value:
-            result.append(node.value)
-        if node.right:
-            result = result + self.dfs(node.right)
-        return result
-
-    def bfs(self, node):
-        """ Breadth-first search traversal """
-        result = []
-        nodelist = [node]
-
-        while nodelist:
-            next_nodelist = []
-            for subnode in nodelist:
-                result.append(subnode.value)
-                if subnode.left:
-                    next_nodelist.append(subnode.left)
-                if subnode.right:
-                    next_nodelist.append(subnode.right)
-            nodelist = next_nodelist
-        
-        return result
+        self.root = None
+        self.size = 0
 
     def insert(self, node, value):
         """ Insert a node into binary search tree """
@@ -91,3 +62,33 @@ class BST(object):
                         parent.right = node.left
                     if node.right:
                         parent.right = node.right
+
+    def dfs(self, node):
+        """ Depth-first search traversal """
+        if not node:
+            return []
+        result = []
+        if node.left:
+            result = result + self.dfs(node.left)
+        if node.value:
+            result.append(node.value)
+        if node.right:
+            result = result + self.dfs(node.right)
+        return result
+
+    def bfs(self, node):
+        """ Breadth-first search traversal """
+        result = []
+        nodelist = [node]
+
+        while nodelist:
+            next_nodelist = []
+            for subnode in nodelist:
+                result.append(subnode.value)
+                if subnode.left:
+                    next_nodelist.append(subnode.left)
+                if subnode.right:
+                    next_nodelist.append(subnode.right)
+            nodelist = next_nodelist
+        
+        return result
